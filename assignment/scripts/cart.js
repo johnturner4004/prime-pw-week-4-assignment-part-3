@@ -1,4 +1,4 @@
-console.log('***** Cart Functions *****');
+console.log('%c***** Cart Functions *****', 'color: black; background-color: green');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
@@ -59,38 +59,55 @@ listItems(basket);
 empty(basket);
 listItems(basket);
 
+//Streach goals
+console.log('%c## Stretch Goals ##', 'color: black; background-color: orange')
 
-/*### Required Features
-Update the `cart.js` file to do the following:
+//__Using functions in other functions!__
+
+//1. Add a global `const` named `maxItems` and set it to 5.
+const maxItems = 5;
+
+//2. Create a function called isFull(). It should:
+const isFull = basketArray => {
+  //- return `false` if the basket contains *less* than max number of items
+  if (basketArray.length < maxItems) {
+    //- return `true` otherwise (equal or more than maxItems)
+    return false;
+  } else {
+    return true;
+  }
+};
+
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+console.log(`Adding pizza: ${addItem('pizza')}`);
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+console.log(`Adding fruit: ${addItem('fruit')}`);
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+console.log(`Adding Xbox: ${addItem('Xbox')}`);
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+console.log(`Adding milk: ${addItem('milk')}`);
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+console.log(`Adding bread: ${addItem('bread')}`);
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Is basket full yet: ${isFull(basket)}`);
+
+
+//3. Update the required `addItem` function to:
+//- Use the `isFull` function to prevent more than `maxItems` from being added to the basket.
+//- If an item was added to the array, return `true`
+//- If there was no room and the item could not be added return `false`
 
 
 
 
-> __IMPORTANT__
-> Make sure that you are writing code *in the file* to test every function that you write!
 
-For example, to test `addItem`:
-```
-console.log(`Basket is ${basket}`);
-console.log('Adding apples (expect true)', addItem('apples'));
-console.log(`Basket is now ${basket}`);
-```
+/*Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
 
-### Stretch Goals
-Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
-
-__Using functions in other functions!__
-
-1. Add a global `const` named `maxItems` and set it to 5.
-
-2. Create a function called isFull(). It should:
-  - return `false` if the basket contains *less* than max number of items
-  - return `true` otherwise (equal or more than maxItems)
-
-3. Update the required `addItem` function to:
-  - Use the `isFull` function to prevent more than `maxItems` from being added to the basket.
-  - If an item was added to the array, return `true`
-  - If there was no room and the item could not be added return `false`
 
 __Using Array built-in functions!__
 
