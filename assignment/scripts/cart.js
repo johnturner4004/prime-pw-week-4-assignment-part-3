@@ -3,40 +3,49 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 //- Create a global variable named `basket` and set it to an empty array.
-let basket;
+let basket = [];
 
 //- Create a function called `addItem`. It should:
-  //- take an input parameter for a string `item`
-  const addItem = item => {
+//- take an input parameter for a string `item`
+const addItem = item => {
   //- add the new item to the global array `basket`.
   basket.push(item);
   //- return `true` indicating the item was added
   let index = basket.indexOf(item);
-  if (index > 0) {
+  if (index !== -1) {
     return true;
   } else {
     return false;
   }
 };
 
+//testin addItem
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Item added?`, addItem('milk'));
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Item added?`, addItem('soda'));
+console.log(`Items currently in basket: ${basket}`);
+console.log(`Item added?`, addItem('cereal'));
+console.log(`Items currently in basket: ${basket}`);
 
 
+//- Create a function called `listItems`. It should:
+const listItems = basketArray => {
+  //- loop over the items in the `basket` array
+  console.log(`%cThis basket contains the following items:`, `color: green`);
+  for (let item of basketArray) {
+    //- console.log each individual item on a new line
+    console.log(item);
+  }
+  console.log(`%cend`, `color: red`);
+};
 
-
-
-
-
+//testing listItems
+listItems(basket);
 
 /*### Required Features
 Update the `cart.js` file to do the following:
 
-
-
-
-
-- Create a function called `listItems`. It should:
-  - loop over the items in the `basket` array
-  - console.log each individual item on a new line
 
 - Create a function called `empty`. It should:
   - reset the `basket` to an empty array
