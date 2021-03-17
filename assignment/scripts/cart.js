@@ -21,11 +21,11 @@ const addItem = item => {
 
 //testin addItem
 console.log(`Items currently in basket: ${basket}`);
-console.log(`Item added?`, addItem('milk'));
+console.log(`Adding milk`, addItem('milk'));
 console.log(`Items currently in basket: ${basket}`);
-console.log(`Item added?`, addItem('soda'));
+console.log(`Adding soda`, addItem('soda'));
 console.log(`Items currently in basket: ${basket}`);
-console.log(`Item added?`, addItem('cereal'));
+console.log(`Adding cereal`, addItem('cereal'));
 console.log(`Items currently in basket: ${basket}`);
 
 
