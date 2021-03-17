@@ -43,12 +43,28 @@ const listItems = basketArray => {
 //testing listItems
 listItems(basket);
 
+//- Create a function called `empty`. It should:
+const empty = (inputArray) => {
+  //- reset the `basket` to an empty array
+  inputArray.length = 0;
+};
+
+//testing empty
+empty(basket);
+listItems(basket);
+addItem('pizza');
+addItem('fruit');
+addItem('Xbox');
+listItems(basket);
+empty(basket);
+listItems(basket);
+
+
 /*### Required Features
 Update the `cart.js` file to do the following:
 
 
-- Create a function called `empty`. It should:
-  - reset the `basket` to an empty array
+
 
 > __IMPORTANT__
 > Make sure that you are writing code *in the file* to test every function that you write!
