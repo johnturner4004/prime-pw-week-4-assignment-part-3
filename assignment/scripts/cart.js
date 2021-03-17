@@ -95,14 +95,31 @@ console.log(`Is basket full yet: ${isFull(basket)}`);
 console.log(`Adding bread: ${addItem('bread')}`);
 console.log(`Items currently in basket: ${basket}`);
 console.log(`Is basket full yet: ${isFull(basket)}`);
+empty(basket);
 
 
 //3. Update the required `addItem` function to:
-//- Use the `isFull` function to prevent more than `maxItems` from being added to the basket.
-//- If an item was added to the array, return `true`
-//- If there was no room and the item could not be added return `false`
+const addItem2 = item => {
+  console.log(`Is basket full: ${isFull(basket)}`);
+  //- Use the `isFull` function to prevent more than `maxItems` from being added to the basket.
+  if (isFull(basket) === false) {
+    //- If an item was added to the array, return `true`
+    console.log(`Adding ${item} to basket`);
+    basket.push(item);
+    console.log(`Items in basket: ${basket}`);
+    return true;
+  }
+    //- If there was no room and the item could not be added return `false`
+    console.log(`Could not add ${item} to basket. Cart is basket`);
+  return false;
+};
 
-
+addItem2('oranges');
+addItem2('brats');
+addItem2(`toilet paper`);
+addItem2('candy');
+addItem2('salt');
+addItem2('pepper');
 
 
 
