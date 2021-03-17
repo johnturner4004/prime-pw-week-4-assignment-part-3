@@ -109,8 +109,8 @@ const addItem2 = item => {
     console.log(`Items in basket: ${basket}`);
     return true;
   }
-    //- If there was no room and the item could not be added return `false`
-    console.log(`Could not add ${item} to basket. Cart is basket`);
+  //- If there was no room and the item could not be added return `false`
+  console.log(`Could not add ${item} to basket. Cart is basket`);
   return false;
 };
 
@@ -121,20 +121,21 @@ addItem2('candy');
 addItem2('salt');
 addItem2('pepper');
 
+//4. Create a function called `removeItem`. It should:
+//- Take an input parameter for a string `item`
+const removeItem = item => {
+  //- Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
+  let i = basket.indexOf(item);
+  if (i !== -1) {
+    //- Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
+    let removed = basket.splice(i, 1);
+    //- Return the item removed or `null` if the item was not found
+    return removed;
+  }
+  return null;
+};
 
-
-/*Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
-
-
-__Using Array built-in functions!__
-
-4. Create a function called `removeItem`. It should:
-  - Take an input parameter for a string `item`
-  - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
-  - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
-  - Return the item removed or `null` if the item was not found
-
-## Assignment Submission
-Check in your repo, then turn in your work via the Prime Academy Assignment Application at http://primeacademy.io, as usual and don't hesitate to hit up the Slack channel as needed!
-
-**REMINDER:** Make sure to answer the Slack discussion question for this week!*/
+console.log(`Removed: ${removeItem('oranges')}`);
+console.log(`Removed: ${removeItem('salt')}`);
+console.log(`Removed: ${removeItem('pepper')}`);
+console.log(`Current items in basket: ${basket}`);
